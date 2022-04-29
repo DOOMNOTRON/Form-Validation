@@ -7,12 +7,18 @@ function main():void{
     resetErrorMessages();
     isTextPresent("first-name", "First name is required.");
     isTextPresent("last-name", "Last name is required.");
+    
+    checkValidDate();
+}
     // Validate date
+function checkValidDate() {
     let dobBox = <HTMLInputElement>document.getElementById("dob");
     let dob = dobBox.value;
-    if(!isValidDate(dob)){
-        let errSpan = dobBox.nextElementSibling;
-        errSpan.innerHTML = "Format should be mm/dd/yyy"
+    if (!isValidDate(dob)) {
+        //let errSpan = dobBox.nextElementSibling;
+        //errSpan.innerHTML = "Format should be mm/dd/yyy";
+        let errSpan = document.getElementById("dob-span");
+        errSpan.innerHTML = "Format should be mm/dd/yyy";
     }
 }
 
