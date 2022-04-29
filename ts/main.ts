@@ -4,9 +4,30 @@ window.onload = function(){
 }
 
 function main():void{
-    isTextPresent("first-name", "First name is required.");
-    isTextPresent("last-name", "Last name is required.");
+    resetErrorMessages();
+    //isTextPresent("first-name", "First name is required.");
+    //isTextPresent("last-name", "Last name is required.");
 }
+
+/**
+ * resets all the spans
+ * to the default text
+ */
+function resetErrorMessages():void{
+    let allSpans = document.querySelectorAll("form span");
+
+    for(let i = 0; i < allSpans.length; i++){
+        let currSpan:HTMLElement = <HTMLElement>allSpans[i];
+
+        if(currSpan.hasAttribute("data-required")){
+            currSpan.innerText =  "*";
+        }
+        else{
+            currSpan.innerText =  "";
+        }
+    }
+}
+
 /**
  * return true if the text box with the given id 
  * has text inside of it.
