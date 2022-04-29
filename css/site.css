@@ -20,7 +20,7 @@ body{
     margin-left: 5%;
     margin-right: 5%;
 }
-h1, form label, form button, form input{
+h1, form label, form button, form input, form span{
     font-family: 'Allerta Stencil', sans-serif;
 }
 
